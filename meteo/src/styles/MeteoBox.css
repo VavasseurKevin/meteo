@@ -1,0 +1,11 @@
+.meteo-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid green;
+}
+
+.meteo-box > h1 {
+    font-size: 20px;
+}

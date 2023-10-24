@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/MainMeteoWindow.css';
+import '../styles/MainMeteoWindow.css';
 
 function MainMeteoWindow(props) {
     return (

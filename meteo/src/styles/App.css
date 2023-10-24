@@ -14,3 +14,16 @@
   color: white;
 }
 
+.meteo-box-list {
+  width: 400px;
+  position: relative;
+  top: 100px;
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.meteo-box-list > li {
+  list-style-type: none;
+}
