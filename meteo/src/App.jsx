@@ -8,7 +8,7 @@ import VilleInput from './components/VilleInput';
 
 function App() {
 
-  const [ville, setVille] = useState('nom de la ville');
+  const [ville, setVille] = useState('undefined');
 
   const handleSetVille = (e) => {
     setVille(e.target.value);
@@ -17,9 +17,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <MainMeteoWindow test={ville}>
-          <VilleInput setVille={handleSetVille}/>
-          <ul className='meteo-box-list'>
+        <MainMeteoWindow ville={ville}>
+          <VilleInput ville={ville} setVille={handleSetVille}/>
+          <ul className='meteo-box-list' style={{display:ville ? 'flex' : 'none'}}>
             <li><MeteoBox/></li>
             <li><MeteoBox/></li>
             <li><MeteoBox/></li>

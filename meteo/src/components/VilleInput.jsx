@@ -4,7 +4,7 @@ import '../styles/VilleInput.css';
 function VilleInput(props) {
     const [isVilleSet, setIsVilleSet] = useState(false);
 
-    const onClickHandler = (e) => {
+    const onKeyDownHandler = (e) => {
         const eventKey = e.which ? e.which : e.keyCode;
 
         // Vérifie si la touche pressée est "Entrée" (keyCode 13)
@@ -25,10 +25,10 @@ function VilleInput(props) {
     return (
         <input
             className="ville-input"
-            style={{ top: isVilleSet ? '-400px' : '78px' }}
+            style={{ top: props.ville ? '-400px' : '78px' }}
             type="text"
             placeholder="Entrez une ville..."
-            onKeyDown={onClickHandler}
+            onKeyDown={onKeyDownHandler}
         />
     );
 }
