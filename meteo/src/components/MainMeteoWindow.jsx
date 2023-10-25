@@ -9,15 +9,16 @@ function MainMeteoWindow(props) {
                 <img
                     src={soleil}
                     alt='soleil'
-                    style={{display : props.ville ? 'block' : 'none'}}
+                    style={{display : props.ville ? 'visible' : 'hidden'}}
                 />
 
                 <div className='aujourdhui'
-                     style={{ display: props.ville ? 'flex' : 'none' }}
+                     style={{ display: props.ville ? 'visible' : 'hidden' }}
                 >
+                <span>Aujourd'hui</span>
                 <h1>{props.ville}</h1>
                 <p>27°C</p>
-                <p>Précipitation : 30%</p>
+                <p>Pluie : 30%</p>
                 </div>
             </div>
             {props.children}

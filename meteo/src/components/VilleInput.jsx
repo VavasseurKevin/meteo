@@ -22,10 +22,21 @@ function VilleInput(props) {
         }
     }
 
+    const style = {
+        top: props.ville ? '-400px' : '50px',
+        width: '600px',
+        display: 'inline-block',
+        padding: '15px 10px',
+        lineHeight: '120%',
+        position: 'relative',
+        borderRadius: '20px',
+        outline: 'none'
+    }
+
     return (
         <input
             className="ville-input"
-            style={{ top: props.ville ? '-400px' : '78px' }}
+            style={style}
             type="text"
             placeholder="Entrez une ville..."
             onKeyDown={onKeyDownHandler}
