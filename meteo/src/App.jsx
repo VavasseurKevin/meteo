@@ -3,7 +3,7 @@ import './styles/App.css';
 import MainMeteoWindow from './components/MainMeteoWindow';
 import MeteoBox from './components/MeteoBox';
 import VilleInput from './components/VilleInput';
-import axios from 'axios'
+import axios from 'axios';
 
 
 
@@ -16,17 +16,35 @@ function App() {
   const [dataDay4, setDataDay4] = useState([]);
   const [dataDay5, setDataDay5] = useState([]);
 
-  // Effectuer des opérations après chaque mise à jour de la ville 
-  useEffect(()=>{
-    getWeather();
-  })
   const handleSetVille = (e) => {
     setVille(e.target.value);
   }
 
-  const getWeather = () => {
 
+  const getWeather = async() => {
+  try {
+    const response = await axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${ville}&APPID=0a2cd64736fdab36d1bc29b00e681d6e`);    
+    const api_data = response.data;
+    
+      if(api_data.cod === '200') {
+        console.log(api_data);
+      }
+      else {
+        console.error('Erreur de réponse de l\'API');
+      }
+    } catch (error) {
+      console.error('Erreur lors de l\'appel API:', error);
+    }
   };  
+
+  // Effectuer des opérations après chaque mise à jour de la ville 
+  useEffect(()=>{
+    if(ville !== 'undefined') {
+    getWeather();
+  }
+  })
+ 
+
 
   return (
     <div className="App">
