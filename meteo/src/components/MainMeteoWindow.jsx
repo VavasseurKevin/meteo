@@ -17,7 +17,7 @@ function MainMeteoWindow(props) {
                 >
                 <span>Aujourd'hui</span>
                 <h1>{props.ville}</h1>
-                <p>27°C</p>
+                <p>Température : 27°C</p>
                 <p>Pluie : 30%</p>
                 </div>
             </div>

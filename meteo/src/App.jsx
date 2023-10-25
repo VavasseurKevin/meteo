@@ -9,48 +9,52 @@ import axios from 'axios';
 
 function App() {
 
-  const [ville, setVille] = useState('undefined');
+  const [ville, setVille] = useState(undefined);
   const [dataDay1, setDataDay1] = useState([]);
   const [dataDay2, setDataDay2] = useState([]);
   const [dataDay3, setDataDay3] = useState([]);
   const [dataDay4, setDataDay4] = useState([]);
   const [dataDay5, setDataDay5] = useState([]);
 
-  const handleSetVille = (e) => {
-    setVille(e.target.value);
-  }
+  const updateState = (newVille) => {
+    setVille(newVille);
+    console.log(newVille);
+  };
 
 
-  const getWeather = async() => {
-  try {
-    const response = await axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${ville}&APPID=0a2cd64736fdab36d1bc29b00e681d6e`);    
-    const api_data = response.data;
-    
-      if(api_data.cod === '200') {
-        console.log(api_data);
-      }
-      else {
-        console.error('Erreur de réponse de l\'API');
+  const getMeteo = async (ville) => {
+    const apiKey = '0a2cd64736fdab36d1bc29b00e681d6e';
+    const apiUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${ville}&APPID=${apiKey}`;
+  
+    try {
+      const response = await axios.get(apiUrl);
+      const apiData = response.data;
+  
+      if (apiData.cod === 200) {
+        updateState(ville);
+        console.log(apiData);
+        return { success: true, data: apiData };
       }
     } catch (error) {
-      console.error('Erreur lors de l\'appel API:', error);
+      console.error('API call failed:', error);
     }
-  };  
+  
+    return { success: false, error: 'API call failed' };
+  };
+  
 
-  // Effectuer des opérations après chaque mise à jour de la ville 
-  useEffect(()=>{
-    if(ville !== 'undefined') {
-    getWeather();
-  }
-  })
- 
-
+  useEffect(() => {
+    // Fetch data when the component mounts or 'ville' changes
+    if (ville) {
+      getMeteo(ville);
+    }
+  }, [ville]);
 
   return (
     <div className="App">
       <header className="App-header">
         <MainMeteoWindow ville={ville}>
-          <VilleInput ville={ville} setVille={handleSetVille}/>
+          <VilleInput ville={ville}  getMeteo={getMeteo} setVille={updateState}/>
           <ul className='meteo-box-list' style={{display:ville ? 'visible' : 'hidden'}}>
             <li><MeteoBox jour='Demain'/></li>
             <li><MeteoBox jour='Demain 2'/></li>
