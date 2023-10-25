@@ -3,6 +3,7 @@ import './styles/App.css';
 import MainMeteoWindow from './components/MainMeteoWindow';
 import MeteoBox from './components/MeteoBox';
 import VilleInput from './components/VilleInput';
+import axios from 'axios'
 
 
 

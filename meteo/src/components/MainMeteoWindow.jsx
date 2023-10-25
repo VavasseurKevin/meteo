@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/MainMeteoWindow.css';
-import soleil from '../images/sun.svg';
+import soleil from '../images/soleil.png';
 
 function MainMeteoWindow(props) {
     return (

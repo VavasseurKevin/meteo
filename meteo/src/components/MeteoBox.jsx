@@ -1,6 +1,6 @@
 import React from "react";
 import '../styles/MeteoBox.css'
-import soleil from '../images/sun.svg'
+import soleil from '../images/soleil.png'
 
 
 function MeteoBox (props) {
