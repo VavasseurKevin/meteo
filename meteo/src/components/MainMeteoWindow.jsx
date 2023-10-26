@@ -8,7 +8,7 @@ function MainMeteoWindow(props) {
         <div className='main'>
             <div className='inner-main'>
                 <img
-                    src={soleil}
+                    src={props.data ? require(`../images/${props.data.icon}.png`) : require('../images/01d.png')}
                     alt='soleil'
                     style={{ visibility: props.ville ? 'visible' : 'hidden' }}
                 />

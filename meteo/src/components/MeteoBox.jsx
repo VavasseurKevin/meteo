@@ -14,7 +14,8 @@ function MeteoBox (props) {
     return (
         <div className="meteo-box">
             <h1>{props.date ? getDay(props.date) : ''}</h1>
-            <img src={soleil} alt='soleil' />
+            <img src={props.icon ? require(`../images/${props.icon}.png`) : require('../images/01d.png')}
+                    alt='soleil'/>
             <span className='temp'>{props.temp ? `${Math.round(props.temp - 273.15)}°C` : ''}</span>
         </div>
     )
