@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/MainMeteoWindow.css';
-import soleil from '../images/01n.png';
+
 
 function MainMeteoWindow(props) {
     const Title = props.ville ? null : <h1 className='title'>React Meteo App</h1>;
