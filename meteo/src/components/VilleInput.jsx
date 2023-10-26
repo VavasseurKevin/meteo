@@ -26,7 +26,7 @@ function VilleInput(props) {
         }
     }
     const style = {
-        top: props.ville ? '-380px' : '50px',
+        top: props.ville ? '-380px' : '10px',
         width: '600px',
         display: 'inline-block',
         padding: '10px 0px 10px 30px',
@@ -34,7 +34,8 @@ function VilleInput(props) {
         position: 'relative',
         borderRadius: '20px',
         outline: 'none',
-        fontSize: '20px'
+        fontSize: '20px',
+        transition: 'all 0.5s ease-out'
     }
 
     return (
