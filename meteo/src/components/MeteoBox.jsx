@@ -1,6 +1,6 @@
 import React from "react";
 import '../styles/MeteoBox.css'
-import soleil from '../images/soleil.png'
+import soleil from '../images/01d.png'
 
 function getDay(date) {
     const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
