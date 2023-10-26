@@ -1,6 +1,6 @@
 import React from "react";
 import '../styles/MeteoBox.css'
-import soleil from '../images/01d.png'
+import soleil from '../images/01n.png'
 
 function getDay(date) {
     const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -14,7 +14,7 @@ function MeteoBox (props) {
     return (
         <div className="meteo-box">
             <h1>{props.date ? getDay(props.date) : ''}</h1>
-            <img src={props.icon ? require(`../images/${props.icon}.png`) : require('../images/01d.png')}
+            <img src={props.icon ? require(`../images/${props.icon}.png`) : require('../images/01n.png')}
                     alt='soleil'/>
             <span className='temp'>{props.temp ? `${Math.round(props.temp - 273.15)}°C` : ''}</span>
         </div>

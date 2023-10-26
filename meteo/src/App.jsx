@@ -71,7 +71,7 @@ function App() {
       let currentItem = data.list[index]; // Utilisez 'let' ici au lieu de 'const'
       if (currentItem && currentItem.dt_txt) {
         let tmp = currentItem.dt_txt.slice(8, 10);
-        while ((tmp === currentItem.dt_txt.slice(8, 10)) || (currentItem.dt_txt.slice(11, 13)!=='12') ) {
+        while (tmp === currentItem.dt_txt.slice(8, 10) ) {
           index++;
           if (index < data.list.length) {
             currentItem = data.list[index];
