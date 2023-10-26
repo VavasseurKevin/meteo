@@ -24,6 +24,7 @@
     padding: 0px 0px 5px 0px;
     position: relative;
     transition: all 0.5s ease-out;
+    color: #113555;
 }
 
 .inner-main > img {
@@ -51,11 +52,23 @@
 
 .title {
     position: absolute;
-    color: #3c8acf;
-    font-size: 5rem;
-    width: 1980px;
-    top: 150px;
+    top: -10px;
+    color: #365a7a;
+    font-size: 4rem;
+    width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
+
+.title:before {
+    content: '';
+    background: url('../images/02d.png') no-repeat;
+    background-size: 100%;
+    width: 250px;
+    height: 250px;
+    display: block;
+  }
 
 @keyframes fadeIn {
     from {

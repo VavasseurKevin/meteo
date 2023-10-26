@@ -24,7 +24,7 @@
 .meteo-box-list {
     width: 850px;
     position: relative;
-    top: 130px;
+    top: 30px;
     display: flex;
     justify-content: space-around;
     align-items: center;
